@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stamp_mobile/widgets/qr_action_row.dart';
 
 import '../styles/color.dart';
 import '../styles/typo.dart';
@@ -25,6 +26,15 @@ class HomePage extends StatelessWidget {
               onRightIconTap: () {
                 // например открыть поиск
               },
+            ),
+            ),
+          SliverToBoxAdapter(
+            child: QrActionRow(
+              qrData: 'user-id-123', // потом подставишь реальный ID/телефон/токен
+              // или qrImageAsset: 'assets/images/qr_mock.png',
+              scanIconAsset: 'assets/images/scan_icon.png',
+              onQrTap: () {},
+              onScanTap: () {},
             ),
           ),
 
