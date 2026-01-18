@@ -5,6 +5,7 @@ import '../styles/color.dart';
 import '../styles/typo.dart';
 
 import '../widgets/home_header.dart';
+import '../widgets/promo_carousel.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,18 +25,34 @@ class HomePage extends StatelessWidget {
                 // открыть выбор города
               },
               onRightIconTap: () {
-                // например открыть поиск
+                // открыть поиск
               },
             ),
             ),
           SliverToBoxAdapter(
             child: QrActionRow(
-              qrData: 'user-id-123', // потом подставишь реальный ID/телефон/токен
-              // или qrImageAsset: 'assets/images/qr_mock.png',
+              qrData: 'user-id-123', // подставить реальный ID
               scanIconAsset: 'assets/images/scan_icon.png',
               onQrTap: () {},
               onScanTap: () {},
             ),
+          ),
+
+          SliverToBoxAdapter(
+            child: Container(
+              decoration: BoxDecoration(
+                color: softWhite,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                ),
+                padding: const EdgeInsets.only(top: 16),
+            child: PromoCarousel(
+              items: const [
+                PromoItem(assetPath: 'assets/images/newObject1.jpg'),
+                PromoItem(assetPath: 'assets/images/newObject2.jpg'),
+                PromoItem(assetPath: 'assets/images/newObject3.jpg'),
+              ],
+            ),
+          ),
           ),
 
           // дальше остальные секции

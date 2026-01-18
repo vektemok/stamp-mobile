@@ -4,6 +4,7 @@ Color primaryColor =Color(0xFF6A5ADF);
 Color secondaryColor =Color(0xFFF2F1F0);
 Color purple1 = Color(0xFF5B5FEF); //Цвет рамки новое в главной странице
 Color purple2 = Color(0xFF887BE5); //Цвет сканера
+Color darkPurple = Color(0xFF5B5FEF); //Цвет qr
 Color black =Color(0xFF000000);
 Color white =Color(0xFFFFFFFF);
 Color softWhite =Color(0xFFF2F1F0); // Фоновый цфет

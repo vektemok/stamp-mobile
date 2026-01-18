@@ -27,7 +27,7 @@ class QrActionRow extends StatelessWidget {
     final width = maxWidth < 292 ? maxWidth : 292;
 
     return Container(
-      color: primaryColor, // фон фиолетовый как в макете
+      color: primaryColor,
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
       child: Align(
         alignment: Alignment.centerLeft,
@@ -50,29 +50,37 @@ class QrActionRow extends StatelessWidget {
               const SizedBox(width: 12),
 
               // Scanner block
-              Expanded(
-                child: _Tile(
-                  radius: 12,
-                  background: purple2,
-                  onTap: onScanTap,
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          scanIconAsset,
-                          width: 24,
-                          height: 24,
-                          fit: BoxFit.contain,
-                        ),
-                        const Spacer(),
-                        Text('Сканер', style: actionPrimary),
-                      ],
+              SizedBox(
+                width: 160,
+                height: 120,
+                child: Material(
+                  color: purple2,
+                  borderRadius: BorderRadius.circular(12),
+                  child: InkWell(
+                    onTap: onScanTap,
+                    borderRadius: BorderRadius.circular(12),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset(
+                            scanIconAsset,
+                            width: 24,
+                            height: 24,
+                          ),
+                          Text(
+                            'Сканер',
+                            style: actionPrimary,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
+
             ],
           ),
         ),
@@ -127,11 +135,11 @@ class _QrContent extends StatelessWidget {
       backgroundColor: white,
       eyeStyle: QrEyeStyle(
         eyeShape: QrEyeShape.square,
-        color: primaryColor, 
+        color: darkPurple, 
       ),
       dataModuleStyle: QrDataModuleStyle(
         dataModuleShape: QrDataModuleShape.circle,
-        color: primaryColor,             
+        color: darkPurple,             
       ),
     );
   }
